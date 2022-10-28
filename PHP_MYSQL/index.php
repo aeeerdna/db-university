@@ -9,6 +9,11 @@
 <body>
     <!-- apro php -->
     <?php
+     // variabili per interagire con database
+     define('DB_SERVERNAME', 'localhost:8888');
+     define('DB_USERNAME', 'root');
+     define('DB_PASSWORD', 'root');
+     define('DB_NAME', 'db-university');
     ?>
 </body>
 </html>

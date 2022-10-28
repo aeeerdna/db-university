@@ -19,12 +19,33 @@
       $conn = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
       // verifica della connessione
-      if($conn && $conn -> connect_error){
+      if($conn && $conn->connect_error){
           echo('Unable to connect, please try again later!!');
           die();
       }
   
-      echo('connection ok!')
+      echo('connection ok!');
+
+      // selezione dati    
+      $sql = 'SELECT `name`, `address`, `email`, `phone`, `website` FROM `departments` ORDER BY `name`';
+
+      $departments_result = $conn->query($sql);
+
+      if($departments_result && $departments_result->num_rows > 0){
+        while($department = $departments_result->fetch_assoc()){
+
+        }
+      }elseif($departments_result){
+        ?>
+        <p>No departments available, i'm sorry!!</p>
+        <?php
+      }
+
+      else{
+        echo('error..');
+        die();
+      }
+
     ?>
 </body>
 </html>
